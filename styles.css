@@ -6,7 +6,16 @@ header {
 }
 
 nav ul{
-  font-size: 12px;
+  font-size: 18px;
+  padding-top: 16px;
+  text-align:center;
+  list-style-type: none;
+  margin-bottom: 60px;
+  margin-right: 10px;
+}
+
+ol{
+  font-size: 14px;
   text-align:center;
   list-style-type: none;
   margin-bottom: 60px;
@@ -14,8 +23,10 @@ nav ul{
 }
 
 h2{
+  font-size: 24px;
   text-align: center;
   margin-top: 20%;
+  padding-top: 10px;
 }
 
 h1{
@@ -29,6 +40,7 @@ h1{
   width: 390px;
   height: 300px;
   border: 5px solid #f5d6e0;
+  padding-bottom:60px;
 }
 
 .col-2 {
@@ -38,12 +50,16 @@ h1{
   width: 390px;
   height: 300px;
   border: 5px solid palevioletred;
+  padding-bottom:60px;
 }
 
 body {
   background-color: #222;
   width:65%;
+  height: 100%;
+  padding-bottom:60px;
   margin:36px auto;
+
 }
 
 #mySketch {
@@ -70,15 +86,24 @@ a:active {
   background-color: inherit;
 }
 
+#container {
+   min-height:100%;
+   position: relative;
+}
+
 footer {
   color: black;
   background-color: grey;
   clear: both;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:60px;
   text-shadow: .5px .5px black;
   text-align: right;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-right: 5px;
   width: 800px;
-  height: 60px;
+  height:60px;
   }
