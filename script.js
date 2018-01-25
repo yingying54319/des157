@@ -7,6 +7,7 @@ var x=0;
 var y=0;
 var n;
 var dx, dy;
+var banner =random(1,100);
 
 function setup() {
   var myCanvas = createCanvas(800, 250);
@@ -21,8 +22,8 @@ function setup() {
 
 function draw() {
   // add statements here
-  if(mouseIsPressed)
-    {
+
+
   x= mouseX-25;
   y= mouseY-25;
   stroke(255,255,255);
@@ -42,4 +43,3 @@ function draw() {
         }
       }
     }
-  }
