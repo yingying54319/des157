@@ -16,44 +16,41 @@
     <div id="mySketch"></div>
   </header>
 
-  <section>
-    <h1>The King's Invitation</h1>
-  </section>
 
   <article>
+    <h1>The King's Invitation</h1>
+
     <form name="f">
 
-      <section class="col-1 column">
-        <nav>
-          <ul>
-            <li for="userName">What is your name?</li>
-            <input type="text" id='persons_name' name="userName" required>
-            <li for="userP">who is your favorite person?</li>
-            <input type="text" id='living_thing' name="userP" required>
-            <li for="userWeekday">what is your favorite weekday?</li>
+      <section id="text" class="col-1 column">
+        <h2>Mad LIBS</h2>
+            <label for="userName">What is your name?</label>
+            <input type="text" id='userName' name="userName" required>
+            <label for="userP">who is your favorite person?</label>
+            <input type="text" id='userP' name="userP" required>
+            <label for="userWeekday">what is your favorite weekday?</label>
             <input type="text" id='userWeekday' name="userWeekday" required>
-            <li for="userNumber">what is your favorite number?</li>
+            <label for="userNumber">what is your favorite number?</label>
             <input type="text" id='userNumber' name="userNumber" required>
-            <li for="userAnimal">what is your favorite animal?</li>
+            <label for="userAnimal">what is your favorite animal?</label>
             <input type="text" id='userAnimal' name="userAnimal" required>
-            </div>
-
             <div>
-              <input type="reset" value="reset" />
+                <input type="reset" value="reset" />
               <input type="submit" value="submit" />
             </div>
-          </ul>
-        </nav>
+
       </section>
     </form>
   </article>
 
   <section id="results" class="col-1 column">
+    <h4>Utopia Kingdom</h4>
     <img src="output.png" alt="output.png" style="width:550px;height:350px;">
     <p id="myMsg"></p>
   </section>
 
   <footer>
+        <h3>Background image from http://web.duowan.com/0901/95715828256.html</h3>
     <nav>
       <ol>
         <li><a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a></li>

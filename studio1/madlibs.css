@@ -26,35 +26,52 @@ body {
   margin: 36px auto;
 }
 
-article {
+label, h2, h3{
   color: antiquewhite;
-  background-color: #222;
+  background-color:inherit;
 }
 
 h1 {
   color: black;
+  background-color: inherit;
   font-family: "Knights Quest.ttf","BlackChancery";
   font-weight: bold;
   font-size: 48px;
   margin-top: 10%;
 }
 
-li {
-  list-style: none;
-  font-family: "Knights Quest.ttf";
-  font-weight: normal;
-  font-size: 24px;
-  margin-top: 15px;
+h3 {
+  font-size: 14px;
+  margin-top: 1%;
 }
 
-ul {
-  background-color: #B21212;
-  opacity: 0.5;
+h2 {
+  font-size: 26px;
+  margin-top: 1%;
+  margin-bottom: 5px;
+}
+
+h4{
+  font-size: 1px;
+  margin-top: -10px;
+  color: white;
+  background-color: inherit;
+}
+
+#text {
+  font-family: "Knights Quest.ttf";
+  font-size: 24px;
+  margin-top: 5px;
+  margin-right: 25px;
   justify-content: center;
   align-items: center;
   padding-left: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
+  background-color: #B21212;
+  opacity: 0.5;
   width: 400px;
 }
 
@@ -114,6 +131,6 @@ footer {
   text-align: center;
   margin-right: 5px;
   width: 1000px;
-  height: 70px;
+  height: 80px;
   padding-top: 1px;
 }
