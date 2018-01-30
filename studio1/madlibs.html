@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="(https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet" />
+  <link href="madlibs.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js">
+  </script>
+  <title>Mad LIBs</title>
+</head>
+
+<body>
+
+  <header>
+    <div id="mySketch"></div>
+  </header>
+
+  <section>
+    <h1>The King's Invitation</h1>
+  </section>
+
+  <article>
+    <form name="f">
+
+      <section class="col-1 column">
+        <nav>
+          <ul>
+            <li for="userName">What is your name?</li>
+            <input type="text" id='persons_name' name="userName" required>
+            <li for="userP">who is your favorite person?</li>
+            <input type="text" id='living_thing' name="userP" required>
+            <li for="userWeekday">what is your favorite weekday?</li>
+            <input type="text" id='userWeekday' name="userWeekday" required>
+            <li for="userNumber">what is your favorite number?</li>
+            <input type="text" id='userNumber' name="userNumber" required>
+            <li for="userAnimal">what is your favorite animal?</li>
+            <input type="text" id='userAnimal' name="userAnimal" required>
+            </div>
+
+            <div>
+              <input type="reset" value="reset" />
+              <input type="submit" value="submit" />
+            </div>
+          </ul>
+        </nav>
+      </section>
+    </form>
+  </article>
+
+  <section id="results" class="col-1 column">
+    <img src="output.png" alt="output.png" style="width:550px;height:350px;">
+    <p id="myMsg"></p>
+  </section>
+
+  <footer>
+    <nav>
+      <ol>
+        <li><a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a></li>
+        <li><a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></li>
+      </ol>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

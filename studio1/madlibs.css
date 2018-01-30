@@ -1,0 +1,119 @@
+/* === madibs css stylesheet == */
+
+@font-face {
+  font-family: "Knights Quest.ttf";
+  src: url('../Knights Quest.ttf');
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family:"BlackChancery";
+  src: url('../BlackChancery');
+  font-style: normal;
+  font-weight: 100;
+}
+
+body {
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 16px;
+  background-color: #222;
+  width: 1000px;
+  height: 100%;
+  padding-bottom: 60px;
+  margin: 36px auto;
+}
+
+article {
+  color: antiquewhite;
+  background-color: #222;
+}
+
+h1 {
+  color: black;
+  font-family: "Knights Quest.ttf","BlackChancery";
+  font-weight: bold;
+  font-size: 48px;
+  margin-top: 10%;
+}
+
+li {
+  list-style: none;
+  font-family: "Knights Quest.ttf";
+  font-weight: normal;
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+ul {
+  background-color: #B21212;
+  opacity: 0.5;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+input[type="reset"], input[type="submit"] {
+  font-size: 18px;
+  font-family: "Knights Quest.ttf";
+  text-align: center;
+  margin: 10px;
+  width: 100px;
+  font-weight: bold;
+  border-radius: 6px;
+  border-bottom: 4px orange solid;
+  background-color: antiquewhite;
+  color: #333;
+  float: left;
+}
+
+#myMsg {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "BlackChancery", "Knights Quest.ttf";
+  color: black;
+  margin-left: 13%;
+  margin-top: -55%;
+}
+
+.col-1 {
+  width: 50%;
+  float: left;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+ol li {
+  font-size: 12px;
+  padding-top: 1px;
+}
+
+a {
+  color: white;
+  background-color: inherit;
+}
+
+footer {
+  background-color: black;
+  opacity: 0.5;
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  text-shadow: .5px .5px black;
+  text-align: center;
+  margin-right: 5px;
+  width: 1000px;
+  height: 70px;
+  padding-top: 1px;
+}
