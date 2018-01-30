@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family:"BlackChancery";
+  font-family: "BlackChancery";
   src: url('../BlackChancery');
   font-style: normal;
   font-weight: 100;
@@ -26,15 +26,15 @@ body {
   margin: 36px auto;
 }
 
-label, h2, h3{
+label, h2, h3 {
   color: antiquewhite;
-  background-color:inherit;
+  background-color: inherit;
 }
 
 h1 {
   color: black;
   background-color: inherit;
-  font-family: "Knights Quest.ttf","BlackChancery";
+  font-family: "Knights Quest.ttf", "BlackChancery";
   font-weight: bold;
   font-size: 48px;
   margin-top: 10%;
@@ -51,7 +51,7 @@ h2 {
   margin-bottom: 5px;
 }
 
-h4{
+h4 {
   font-size: 1px;
   margin-top: -10px;
   color: white;
