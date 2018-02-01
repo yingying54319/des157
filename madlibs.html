@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet" />
+  <link href="madlibs.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js">
+  </script>
+  <title>Mad LIBs /*************************************************************************************** * Title:
+    <duowan.com>
+      * Author:
+      <unknown>
+        * Date:
+        <2009>
+          * Code version:
+          <html>
+          * Availability:
+          <website page>
+            ***************************************************************************************/
+  </title>
+</head>
+
+<body>
+
+  <header>
+    <div id="mySketch"></div>
+  </header>
+
+
+  <article>
+    <h1>The King's Invitation</h1>
+
+    <form name="f">
+
+      <section id="text" class="col-1 column">
+        <h2>Mad LIBS</h2>
+        <label for="userName">What is your name?</label>
+        <input type="text" id='userName' name="userName" required>
+        <label for="userP">who is your favorite person?</label>
+        <input type="text" id='userP' name="userP" required>
+        <label for="userWeekday">what is your favorite weekday?</label>
+        <input type="text" id='userWeekday' name="userWeekday" required>
+        <label for="userNumber">what is your favorite number?</label>
+        <input type="text" id='userNumber' name="userNumber" required>
+        <label for="userAnimal">what is your favorite animal?</label>
+        <input type="text" id='userAnimal' name="userAnimal" required>
+        <div>
+          <input type="reset" value="reset" />
+          <input type="submit" value="submit" />
+        </div>
+
+      </section>
+    </form>
+  </article>
+
+  <section id="results" class="col-1 column">
+    <h4>Utopia Kingdom</h4>
+    <img src="output.png" alt="output.png" style="width:550px;height:380px;">
+    <p id="myMsg"></p>
+  </section>
+
+  <footer>
+    <h3>Background image from http://web.duowan.com/0901/95715828256.html</h3>
+    <nav>
+      <ol>
+        <li><a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a></li>
+        <li><a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></li>
+      </ol>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
