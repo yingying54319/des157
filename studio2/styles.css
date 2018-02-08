@@ -1,0 +1,187 @@
+/* === studio2 css stylesheet == */
+
+* {
+  box-sizing: border-box;
+}
+
+/* === content css stylesheet == */
+
+body {
+  color: inherit;
+  background-color: #ffe6ea;
+}
+
+#girl {
+  position: absolute;
+  top: 100px;
+  right: 0;
+}
+
+.portfolio-list li {
+  position: relative;
+  list-style-type: none;
+  width: 35%;
+  margin-top: 0%;
+  padding-top: 2%;
+}
+
+.portfolio-list li img {
+  display: block;
+  width: 100%;
+  margin: 0;
+  vertical-align: top;
+}
+
+.chocolates a:after {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(chocolates.png) center center no-repeat;
+  background-size: 200px 200px;
+  opacity: 0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.portfolio-list a:hover:after {
+  opacity: 1;
+}
+
+.laptop a:after {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(laptop.png) center center no-repeat;
+  background-size: 190px 190px;
+  opacity: 0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.phone a:after {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(phone.png) center center no-repeat;
+  background-size: 190px 190px;
+  opacity: 0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+#answer1 {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 30%;
+  color: green;
+  background-color: #000;
+  opacity: 0.85;
+  text-align: center;
+  display: none;
+}
+
+#answer2 {
+  position: absolute;
+  top: 42%;
+  left: 40%;
+  width: 30%;
+  color: purple;
+  display: none;
+  text-align: center;
+}
+
+#answer3 {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 30%;
+  color: orange;
+  display: none;
+  text-align: center;
+}
+
+p {
+  font-family: sans-serif;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  font-size: 14px;
+  list-style-type: none;
+  background-color: #000;
+  opacity: 0.85;
+}
+
+#close1 {
+  position: absolute;
+}
+
+#close2 {
+  position: absolute;
+}
+
+#close3 {
+  position: absolute;
+}
+
+h1 {
+  display: none;
+}
+
+h4 {
+  display: none;
+}
+
+aside {
+  color: red;
+  text-align: center;
+  padding-left: 10px;
+  font-size: 20px;
+  display: block;
+  font-family: "Girls Have Many Secrets", "always forever";
+}
+
+ol li {
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+a {
+  color: white;
+  background-color: inherit;
+}
+
+footer {
+  color: inherit;
+  background-color: black;
+  opacity: 0.5;
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  text-shadow: .5px .5px black;
+  text-align: center;
+  margin-right: 5px;
+  width: 100%;
+  height: 60px;
+}
+
+@media only screen and (min-width: 768px) {
+  /* change img parameters */
+  p {
+    position: absolute;
+  }
+  section {
+    text-align: center;
+  }
+}
