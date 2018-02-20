@@ -10,6 +10,20 @@ h2 {
   font-style: bold;
 }
 
+.col-1 {
+  width: 50%;
+  float: left;
+}
+.col-2 {
+  width: 50%;
+  float: left;
+  margin-top: 15px;
+}
+
+p{
+  padding: 10px;
+}
+
 a {
   color: #996633;
   background-color: inherit;
