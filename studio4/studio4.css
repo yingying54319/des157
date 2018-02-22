@@ -1,0 +1,63 @@
+/* === studio4 css stylesheet == */
+  #map{
+    height:500px;
+    width:100%;
+    text-align: center;
+  }
+
+  h1{
+  margin-left: 10px;
+  margin-top: 5%;
+  font-size: 30px;
+  text-align: center;
+  color: #16452d;
+  }
+
+h3{
+  color: #297e52;
+  font-size: 14px;
+}
+
+h4{
+  color: black;
+  text-align: left;
+  font-size: 10px;
+  line-height: 0.5px;
+}
+
+  a {
+    color: #996633;
+    background-color: inherit;
+    text-align: center;
+  }
+
+  a:visited {
+    color: brown;
+    background-color: inherit;
+  }
+
+  a:active {
+    color: #661933;
+    background-color: inherit;
+  }
+
+  footer a {
+      margin-left: auto;
+      margin-left: 15px;
+      padding-right: 15px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+  footer {
+    color: black;
+    background-color: inherit;
+    clear: both;
+    text-align: center;
+    height: 30px;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    padding-top: 20px;
+    margin: 0;
+    }
