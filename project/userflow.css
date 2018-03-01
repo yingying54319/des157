@@ -1,0 +1,45 @@
+
+body {
+  background-color: white;
+  width:500px;
+  height: 100%;
+  margin:0px auto;
+}
+
+h2{
+  font-size: 24px;
+  font-style: bold;
+}
+
+a {
+  color: #996633;
+  background-color: inherit;
+  text-align:
+}
+
+a:visited {
+  color: brown;
+  background-color: inherit;
+}
+
+a:active {
+  color: #661933;
+  background-color: inherit;
+}
+
+html, body{
+  height: 90%;
+}
+
+#footer {
+  color: black;
+      background-color: inherit;
+      clear: both;
+      text-align: center;
+      height: 30px;
+      position: fixed;
+      bottom: 0%;
+      width: 500px;
+      padding-top: 20px;
+      margin: 0;
+  }
