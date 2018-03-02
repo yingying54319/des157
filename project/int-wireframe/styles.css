@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  width: 25%;
+  float: left;
+}
+
+.main {
+  width: 75%;
+  float: left;
+}
+
+header {
+  height: 150px;
+  width: 800px;
+}
+
+#map {
+  margin-top: 30%;
+  height: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  text-align: center;
+  font-size: 24px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 18px;
+}
+
+div, input {
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 15px;
+  background: lightgrey;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 8px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button h4 {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button h4:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover h4 {
+  padding-right: 45px;
+}
+
+.button:hover h4:after {
+  opacity: 1;
+  right: 0;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: inherit;
+  background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  font-size: 22px;
+  display: block;
+  color: white;
+  background-color: inherit;
+  text-align: center;
+  padding: 24px 50px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  color: inherit;
+  background-color: lightgrey;
+}
+
+ul.topnav li a.active {
+  color: inherit;
+  background-color: #4CAF50;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+
+h1 {
+  display: none
+}
+
+body {
+  color: inherit;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 60px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+a {
+  color: #996633;
+  background-color: inherit;
+}
+
+a:visited {
+  color: black;
+  background-color: inherit;
+}
+
+a:active {
+  color: #661933;
+  background-color: inherit;
+}
+
+footer a {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+footer {
+  color: black;
+  background-color: inherit;
+  clear: both;
+  text-align: center;
+  height: 30px;
+  position: fixed;
+  bottom: 0%;
+  width: 800px;
+  padding-top: 20px;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  h1, p, .buttons, ul.topnav li.right, ul.topnav li {
+    float: none;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}

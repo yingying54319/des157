@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js">
+  </script>
+  <title>Interactive Wireframe</title>
+</head>
+
+<body>
+
+
+  <header>
+    <section>
+      <h1>Interactive Wireframe Project</h1>
+      <nav>
+        <ul class="topnav">
+          <li class="left"><a href="project/topic-brainstorm.html">Countries of Asia</a></li>
+          <li class="right"><a href="project/research.html">Play</a></li>
+          <li class="right"><a href="project/comparative.html">Learn</a></li>
+          <li class="right"><a href="project/topic-brainstorm.html">About</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <section>
+    <div class="content">
+      <h1>paragraphy</h1>
+      <p>How well do you know about the countries in Asia and their capital?</p>
+    </div>
+  </section>
+  <section class="buttons">
+    <a href="#" class="button">
+      <h4>Well enough, let's <span style="color:red;font-size:15px">PLAY</span></h4>
+    </a>
+    <a href="#" class="button">
+      <h4>Not much, <span style="color:red;font-size:15px">LEARN</span> please</h4>
+    </a>
+  </section>
+
+  <section>
+    <h1>Asia Map</h1>
+    <div id="map"></div>
+  </section>
+
+  <footer>
+    <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    <a href="https://developers.google.com/">Google Developer</a>
+
+  </footer>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLUMGVWvspsk22kLng-1zh5T1-8PLaR9I&callback=initMap">
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
