@@ -1,12 +1,20 @@
 /* === studio javascript == */
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
 
 function initMap() {
   // Map options
   var options = {
-    zoom: 2,
+    zoom: 3,
     center: {
-      lat: 25.9631,
-      lng: -1.0208
+      lat: 34.0479,
+      lng: 100.6197
     }
   }
 
