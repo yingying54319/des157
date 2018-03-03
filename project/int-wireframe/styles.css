@@ -5,6 +5,7 @@
 .content h1{
   width:100%;
   font-size: 24px;
+  background-color: lightgrey;
 }
 
 #map {
@@ -72,7 +73,7 @@ div, input {
 .topnav a {
   float: left;
   display: inline;
-  color: #f2f2f2;
+  color: grey;
   text-align: center;
   padding: 20px;
   text-decoration: none;
@@ -84,7 +85,7 @@ div, input {
 }
 
 .active {
-  background-color: red;
+  background-color: grey;
   color: white;
 }
 
@@ -93,17 +94,7 @@ div, input {
 }
 
 a {
-  color: #996633;
-  background-color: inherit;
-}
-
-a:visited {
-  color: brown;
-  background-color: inherit;
-}
-
-a:active {
-  color: #661933;
+  color: grey;
   background-color: inherit;
 }
 
