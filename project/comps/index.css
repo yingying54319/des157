@@ -1,0 +1,54 @@
+body {
+  background-color: white;
+  width: 800px;
+  height: 100%;
+  margin: 0px auto;
+}
+
+h2 {
+  font-size: 32px;
+  font-style: bold;
+}
+
+a {
+  color: #996633;
+  background-color: inherit;
+}
+
+img{
+  padding: 20px;
+}
+
+a:visited {
+  color: brown;
+  background-color: inherit;
+}
+
+a:active {
+  color: #661933;
+  background-color: inherit;
+}
+
+html, body {
+  height: 90%;
+}
+
+footer a {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+footer {
+  color: black;
+  background-color: inherit;
+  clear: both;
+  text-align: center;
+  height: 30px;
+  position: fixed;
+  bottom: 0%;
+  width: 800px;
+  padding-top: 20px;
+  margin: 0;
+}
