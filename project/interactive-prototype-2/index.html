@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="styles.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js">
+  </script>
+  <title>Interactive Wireframe</title>
+</head>
+
+<body>
+
+
+  <header>
+    <section class="container">
+    <div class="topnav" id="myTopnav">
+      <a onclick="initScroll( 'one' ); return false;" class="w3-col w3-quarter active" id="asia" href="#">Countries of Asia</a>
+      <a onclick="initScroll( 'two' ); return false;" class="w3-col w3-quarter" href="#">About</a>
+      <a onclick="initScroll( 'three' ); return false;" class="w3-col w3-quarter" href="#">Learn</a>
+      <a onclick="initScroll( 'four' ); return false;" class="w3-col w3-quarter" href="#">Play</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      <a id="top" onclick="toTop(); return false;" href="#"> To Top </a>
+    </div>
+  </header>
+
+  <div id="one">
+    <div class="w3-row w3-container w3-center w3-margin-top w3-padding-48">
+      <div class="content">
+        <h1>How well do you know about the countries in Asia and their capitals?</h1>
+      </div>
+    </div>
+
+    <div class="w3-row">
+      <div class="w3-container w3-half">
+
+        <div class="buttons">
+          <a href="#" class="button">
+            <h4>Well enough, let's <span style="color:red;font-size:15px">PLAY</span></h4>
+          </a>
+        </div>
+      </div>
+
+      <div class="w3-container w3-half">
+        <div class="buttons">
+          <a href="#" class="button">
+            <h4>Not much, <span style="color:red;font-size:15px">LEARN</span> please</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-row">
+      <div class="map" id="map">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div id="two">
+  </div>
+
+  <div id="three">
+  </div>
+
+  <div id="four">
+  </div>
+
+
+
+  <footer class="w3-row w3-container">
+    <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+    <a href="https://www.w3schools.com/w3css/default.asp/">W3.CSS</a>
+    <a href="https://developers.google.com/">Google Developer</a>
+  </footer>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLUMGVWvspsk22kLng-1zh5T1-8PLaR9I&callback=initMap">
+    </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

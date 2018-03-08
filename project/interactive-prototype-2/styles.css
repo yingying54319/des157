@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+#one{
+  background-color: white;
+  height: 100vh;
+}
+#two{
+  background-color: yellow;
+  height: 100vh;
+}
+#three{
+  background-color: blue;
+  height: 100vh;
+}
+#four{
+  background-color: green;
+  height: 100vh;
+}
+
+#top{
+  position: fixed;
+  right:0;
+  bottom: 0;
+}
+
+.content h1{
+  width:100%;
+  font-size: 24px;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+  margin-top: 10%;
+}
+
+body {
+  margin: 0;
+  color: inherit;
+  padding-bottom: 10px;
+  margin: 0px auto;
+  max-width: 800px;
+}
+
+div, input {
+  text-align: center;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 15px;
+  background: lightgrey;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 8px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button h4 {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button h4:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover h4 {
+  padding-right: 45px;
+}
+
+.button:hover h4:after {
+  opacity: 1;
+  right: 0;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: inline;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+.active {
+  background-color: red;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+  color: #996633;
+  background-color: inherit;
+}
+
+a:visited {
+  color: brown;
+  background-color: inherit;
+}
+
+a:active {
+  color: #661933;
+  background-color: inherit;
+}
+
+footer a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+footer {
+  color: black;
+  background-color: inherit;
+  clear: both;
+  text-align: center;
+  height: 30px;
+  width: 800px;
+  position: fixed;
+  bottom: 0%;
+  margin: 0;
+}
+
+@media only screen and (max-width:600px) {
+  /* For mobile phones: */
+  footer, footer a, .topnav, .content, .buttons, .map {
+    width:100%;
+  }
+
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  #asia {
+    width: 80%;
+  }
+
+  .topnav a.icon {
+    width: 20%;
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    display: block;
+    text-align: center;
+  }
+
+  footer {
+position: relative;
+  }
+  #top{
+    width: 60px;
+    height: 60px;
+    bottom: 0;
+    font-size: 12px;
+  }
+}
