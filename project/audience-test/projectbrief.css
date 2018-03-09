@@ -1,0 +1,59 @@
+///comparative scc
+
+
+header {
+  height:250px;
+  width: 800px;
+}
+
+nav ul{
+  font-size: 18px;
+  text-align:center;
+  list-style-type: none;
+}
+
+
+h2{
+  font-size: 20px;
+  text-align: left;
+  padding-top: 10px;
+  color: #F0E68C;
+  font-style: bold;
+}
+
+p{
+  font-size: 16px;
+  text-align: left;
+  padding-top: 15px;
+  color: #5F9EA0;
+}
+
+
+body {
+  background-color: white;
+  width:800px;
+  padding-bottom:60px;
+  margin:36px auto;
+
+}
+
+
+#container {
+   min-height:100%;
+}
+
+#main{
+  overflow: auto;
+  padding-bottom: 100px;
+}
+
+#footer {
+    color: black;
+    background-color: inherit;
+    clear: both;
+    text-align: center;
+    width: 800px;
+    position: fixed;
+    bottom: 0%;
+    margin: 0;
+  }
