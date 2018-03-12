@@ -273,8 +273,11 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
 
 @media only screen and (max-width:600px) {
   /* For mobile phones: */
-  footer, #map, div, footer a,.content, .buttons, .button, .map {
+  footer, #map, div, footer a, .content, .map {
     width: 100%;
+  }
+  .buttons {
+    width: 110%;
   }
   .topnav a:not(:first-child) {
     display: none;
@@ -304,5 +307,9 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
   }
   h5, li {
     font-size: 3vw;
+  }
+
+  .button h4 {
+    font-size: 4vw;
   }
 }
