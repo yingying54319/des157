@@ -1,0 +1,172 @@
+@import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
+
+* {
+  box-sizing: border-box;
+}
+
+body, html, .onepage-wrapper {
+  margin: 0;
+  -webkit-transition: opacity 400ms;
+  -moz-transition: opacity 400ms;
+  transition: opacity 400ms;
+  padding-bottom: 10px;
+  margin: 0px auto;
+  max-width: 800px;
+}
+
+h2{
+  display: none;
+}
+
+h1 {
+font-size: 22px;
+text-align: center;
+  margin-top: 20%;
+}
+
+.buttons, input {
+  text-align: center;
+  float: left;
+  width: 50%;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 15px;
+  background: lightgrey;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 8px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button h4 {
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button h4:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover h4 {
+  padding-right: 45px;
+}
+
+.button:hover h4:after {
+  opacity: 1;
+  right: 0;
+}
+
+.toTop {
+  font-size: 14px;
+  color: red;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.topnav {
+  overflow: hidden;
+  color: white;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: inline;
+  color: white;
+  background-color: inherit;
+  text-align: center;
+  width: 25%;
+  padding: 20px;
+  text-decoration: none;
+}
+
+#asia {
+  background-color: red;
+  font-size: 22px;
+  width: 50%;
+}
+
+.topnav a:hover {
+  background-color: inherit;
+  color: black;
+}
+
+.active {
+  background-color: red;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+footer a:visited {
+  color: brown;
+  background-color: inherit;
+}
+
+footer a:active {
+  color: #661933;
+  background-color: inherit;
+}
+
+footer a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px;
+}
+
+footer {
+  color:inherit;
+  background-color: white;
+  opacity: .8;
+  clear: both;
+  text-align: center;
+  width: 800px;
+  position: fixed;
+  bottom: 0%;
+  margin: 0;
+  padding: 5px;
+}
+
+@media only screen and (max-width:600px) {
+  /* For mobile phones: */
+  footer, #map, div, footer a,h1, .topnav a, .topnav, .content, .buttons, .button{
+    width: 100%;
+  }
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  #asia {
+    width: 80%;
+  }
+  .topnav a.icon {
+    width: 20%;
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    display: block;
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Pure JS One Page Scroll by Pete R. | The Pete Design</title>
+	<meta name="title" content="Pure JS One Page Scroll by Pete R. | The Pete Design" />
+	<meta name="description" content="Pure JS One Page Scroll is the javascript version (no need for jQuery any more) of the infamous jQuery One Page Scroll. Create an Apple-like one page scroller website (iPhone 5S website) with One Page Scroll plugin" />
+	<link rel="image_src" href="/images/onepage_scroll_image.png" />
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta content="http://www.thepetedesign.com/demos/purejs_onepage_scroll_demo.html" property="og:url" />
+	<meta content="http://www.thepetedesign.com/images/onepage_scroll_image.png" property="og:image" />
+	<link rel="shortcut icon" id="favicon" href="favicon.png">
+	<meta name="author" content="Pete R.">
+	<link rel="canonical" href="http://www.thepetedesign.com/demos/purejs_onepage_scroll_demo.html" />
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico:400' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="learn.js"></script>
+	<link href='learn.css' rel='stylesheet' type='text/css'>
+	<style>
+		html {
+			height: 100%;
+		}
+
+		body {
+			padding: 0;
+			text-align: center;
+			position: relative;
+			height: 100%;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		.wrapper,
+		.page_container,
+		section {
+			height: 100% !important;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		div {
+			width: 90%;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="main">
+
+			<section class="page1">
+				<h5> Alphabetical list of countries in Asia</h5>
+
+				<div id="customers" class="col-1 column">
+					<li><strong>A</strong></li>
+					<li>Afghanistan</li>
+					<li>Armenia</li>
+					<li>Azerbaijan</li>
+					<li><strong>B</strong></li>
+					<li>Bahrain</li>
+					<li>Bangladesh</li>
+					<li>Bhutan</li>
+					<li>Brunei</li>
+					<li><strong>C</strong></li>
+					<li>Cambodia</li>
+					<li>China</li>
+					<li>Cyprus</li>
+					<li><strong>D</strong></li>
+					<li><strong>E</strong></li>
+				</div>
+				<div id="customers" class="col-2 column">
+					<li><strong>F</strong></li>
+					<li><strong>G</strong></li>
+					<li>Georgia</li>
+					<li><strong>H</strong></li>
+					<li><strong>I</strong></li>
+					<li>India</li>
+					<li>Indonesia</li>
+					<li>Iran</li>
+					<li>Iraq</li>
+					<li>Israel</li>
+					<li><strong>J</strong></li>
+					<li>Japan</li>
+					<li>Jordan</li>
+					<li><strong>K</strong></li>
+					<li>Kazakhstan</li>
+				</div>
+				<div id="customers" class="col-3 column">
+					<li>Kuwait</li>
+					<li>Kyrgyzstan</li>
+					<li><strong>L</strong></li>
+					<li>Laos</li>
+					<li>Lebanon</li>
+					<li><strong>M</strong></li>
+					<li>Malaysia</li>
+					<li>Maldives</li>
+					<li>Mongolia</li>
+					<li>Myanmar</li>
+					<li><strong>N</strong></li>
+					<li>Nepal</li>
+					<li>North Korea</li>
+					<li><strong>O</strong></li>
+					<li>Oman</li>
+				</div>
+				<div id="customers" class="col-2 column">
+					<li><strong>P</strong></li>
+					<li>Pakistan</li>
+					<li>Palestine</li>
+					<li>Philippines</li>
+					<li><strong>Q</strong></li>
+					<li>Qatar</li>
+					<li><strong>R</strong></li>
+					<li>Russia</li>
+					<li><strong>S</strong></li>
+					<li>Saudi Arabia</li>
+					<li>Singapore</li>
+					<li>South Korea</li>
+					<li>Sri Lanka</li>
+					<li>Syria</li>
+					<li>Taiwan</li>
+				</div>
+				<div id="customers" class="col-5 column">
+					<li>Tajikistan</li>
+					<li>Thailand</li>
+					<li>Timor-Leste</li>
+					<li>Turkey</li>
+					<li>Turkmenistan</li>
+					<li><strong>U</strong></li>
+					<li>United Arab Emirates</li>
+					<li>Uzbekistan</li>
+					<li><strong>V</strong></li>
+					<li><strong>W</strong></li>
+					<li><strong>S</strong></li>
+					<li><strong>Y</strong></li>
+					<li><strong>Z</strong></li>
+				</div>
+			</section>
+
+
+			<section class="page2">
+
+				<main id="map">
+				</main>
+
+			</section>
+
+			<section class="page3">
+				<h6>Click & View </h6>
+				<canvas id="canv">
+	</section>
+
+	<section class="page4">
+		<div class="buttons">
+			<a href="#" class="button">
+				<h4>Ready?<span style="color:red;font-size:15px"> Let's Play!</span></h4>
+			</a>
+		</div>
+</section>
+
+
+</div>
+</div>
+<ul>
+	<a id="top" onclick="toTop(); return false;" href="#"><button class="toTop" type="button"> Scroll</button></a>
+	</ul>
+
+			<footer>
+				<a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>
+				<a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+				<a href="https://developers.google.com/">Google Developer</a>
+				 <a class="back" href="#">HOME PAGE</a>
+			</footer>
+
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLUMGVWvspsk22kLng-1zh5T1-8PLaR9I&callback=initMap">
+			</script>
+  <script>
+	 onePageScroll(".main", {
+     sectionContainer: "section",
+     loop: true,
+     responsiveFallback: false
+   });
+
+	</script>
+</body>
+</html>
