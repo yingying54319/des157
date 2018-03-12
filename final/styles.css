@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body, html, .onepage-wrapper {
+body, html{
   margin: 0;
   -webkit-transition: opacity 400ms;
   -moz-transition: opacity 400ms;
@@ -12,6 +12,8 @@ body, html, .onepage-wrapper {
   padding-bottom: 10px;
   margin: 0px auto;
   max-width: 800px;
+  color: inherit;
+  background-color: #F0F8FF;
 }
 
 h2{
@@ -19,9 +21,13 @@ h2{
 }
 
 h1 {
-font-size: 22px;
+font-size: 26px;
 text-align: center;
   margin-top: 20%;
+}
+
+section{
+  padding-top: 12%;
 }
 
 .buttons, input {
@@ -31,9 +37,8 @@ text-align: center;
 }
 
 .button {
-  padding: 10px 20px;
-  margin: 15px;
-  background: lightgrey;
+  padding: 10px 22px;
+  background: black;
   color: #FFF;
   text-decoration: none;
   border-radius: 8px;
@@ -53,7 +58,6 @@ text-align: center;
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -20px;
   transition: 0.5s;
 }
 
@@ -64,50 +68,6 @@ text-align: center;
 .button:hover h4:after {
   opacity: 1;
   right: 0;
-}
-
-.toTop {
-  font-size: 14px;
-  color: red;
-  background-color: black;
-  border-radius: 5px;
-}
-
-.topnav {
-  overflow: hidden;
-  color: white;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  display: inline;
-  color: white;
-  background-color: inherit;
-  text-align: center;
-  width: 25%;
-  padding: 20px;
-  text-decoration: none;
-}
-
-#asia {
-  background-color: red;
-  font-size: 22px;
-  width: 50%;
-}
-
-.topnav a:hover {
-  background-color: inherit;
-  color: black;
-}
-
-.active {
-  background-color: red;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
 }
 
 footer a:visited {
