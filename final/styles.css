@@ -1,10 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
-
 * {
   box-sizing: border-box;
 }
 
-body, html{
+body, html {
   margin: 0;
   -webkit-transition: opacity 400ms;
   -moz-transition: opacity 400ms;
@@ -13,20 +11,41 @@ body, html{
   margin: 0px auto;
   max-width: 800px;
   color: inherit;
-  background-color: #F0F8FF;
+  background: radial-gradient(#b4c5cf, #447891);
+  background-attachment: fixed;
 }
 
-h2{
+h2 {
   display: none;
 }
 
 h1 {
-font-size: 26px;
-text-align: center;
+  animation: slideUp 0.95s .5s cubic-bezier(0.17, .88, .32, 1.27) both, fadeIn .7s .5s ease-in both;
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, .61);
+  font-size: 28px;
+  text-align: center;
   margin-top: 20%;
 }
 
-section{
+@keyframes slideUp {
+  from {
+    transform: translateY(200%);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+section {
   padding-top: 12%;
 }
 
@@ -88,8 +107,8 @@ footer a {
 }
 
 footer {
-  color:inherit;
-  background-color: white;
+  color: black;
+  background-color: inherit;
   opacity: .8;
   clear: both;
   text-align: center;
@@ -102,7 +121,7 @@ footer {
 
 @media only screen and (max-width:600px) {
   /* For mobile phones: */
-  footer, #map, div, footer a,h1, .topnav a, .topnav, .content, .buttons, .button{
+  footer, #map, div, footer a, h1, .topnav a, .topnav, .content, .buttons, .button {
     width: 100%;
   }
   .topnav a:not(:first-child) {
@@ -128,5 +147,4 @@ footer {
     display: block;
     text-align: center;
   }
-
 }
