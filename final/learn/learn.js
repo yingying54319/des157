@@ -524,171 +524,713 @@ function onePageScroll(element, options) {
  };
 
 
- function myFunction() {
-     var x = document.getElementById("myTopnav");
-     if (x.className === "topnav") {
-         x.className += " responsive";
-     } else {
-         x.className = "topnav";
+
+
+
+
+
+
+
+
+ // This will let you use the .remove() function later on
+ if (!('remove' in Element.prototype)) {
+   Element.prototype.remove = function() {
+     if (this.parentNode) {
+       this.parentNode.removeChild(this);
      }
+   };
  }
 
- function initMap() {
-   // Map options
-   var options = {
-     zoom: 3,
-     center: {
-       lat: 34.0479,
-       lng: 100.6197
+ mapboxgl.accessToken = 'pk.eyJ1IjoiZXhhbXBsZXMiLCJhIjoiY2lqbmpqazdlMDBsdnRva284cWd3bm11byJ9.V6Hg2oYJwMAxeoR9GEzkAA';
+
+ // This adds the map
+ var map = new mapboxgl.Map({
+   // container id specified in the HTML
+   container: 'map',
+   // style URL
+   style: 'mapbox://styles/mapbox/light-v9',
+   // initial position in [long, lat] format
+   center: [84.1240,38.3949],
+   // initial zoom
+   zoom: 2.2,
+   scrollZoom: false
+ });
+
+ var stores = {
+   "type": "FeatureCollection",
+   "features": [{"type": "Feature",
+       "geometry": {"type": "Point",
+         "coordinates": [
+           67.7100,
+           33.9391
+         ]
+       },
+       "properties": {
+         "address": "Afghanistan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           45.0382,
+           40.0691
+         ]
+       },
+       "properties": {
+         "address": "Armenia",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           47.5769,
+           40.1431
+         ]
+       },
+       "properties": {
+         "address": "Azerbaijan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           50.5577,
+           26.0667
+         ]
+       },
+       "properties": {
+         "address": "Bahrain",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           90.3563,
+           23.6850
+         ]
+       },
+       "properties": {
+         "address": "Bangladesh",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           90.4336,
+           27.5142
+         ]
+       },
+       "properties": {
+         "address": "Bhutan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           114.7277,
+           4.5353
+         ]
+       },
+       "properties": {
+         "address": "Brunei",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           104.9910,
+           12.5657
+         ]
+       },
+       "properties": {
+         "address": "Cambodia",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           101.7782,
+           36.6171
+         ]
+       },
+       "properties": {
+         "address": "China",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           33.4299,
+           35.1264
+         ]
+       },
+       "properties": {
+         "address": "Cyprus",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           82.9001,
+           32.1656
+         ]
+       },
+       "properties": {
+         "address": "Georgia",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           78.9629,
+           20.5937
+         ]
+       },
+       "properties": {
+         "address": "India",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           113.9213,
+           0.7893
+         ]
+       },
+       "properties": {
+         "address": "Indonesia",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           53.6880,
+           32.4279
+         ]
+       },
+       "properties": {
+         "address": "Iran",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           43.6793,
+           33.2232
+         ]
+       },
+       "properties": {
+         "address": "Iraq",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           34.8516,
+           31.0461
+         ]
+       },
+       "properties": {
+         "address": "Israel",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           138.2529,
+           36.2048
+         ]
+       },
+       "properties": {
+         "address": "Japan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           36.2384,
+           30.5852
+         ]
+       },
+       "properties": {
+         "address": "Jordan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           47.4818,
+           29.3117
+         ]
+       },
+       "properties": {
+         "address": "Kuwait",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           74.7661,
+           41.2044
+         ]
+       },
+       "properties": {
+         "address": "Kyrgyzstan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           102.4955,
+           19.8563
+         ]
+       },
+       "properties": {
+         "address": "Laos",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           35.8623,
+           33.8547
+         ]
+       },
+       "properties": {
+         "address": "Lebanon",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           101.9758,
+           4.2105
+         ]
+       },
+       "properties": {
+         "address": "Malaysia",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           73.2207,
+           3.2028
+         ]
+       },
+       "properties": {
+         "address": "Maldives",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           103.8467,
+           46.8625
+         ]
+       },
+       "properties": {
+         "address": "Mongolia",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           95.9560,
+           21.9162
+         ]
+       },
+       "properties": {
+         "address": "Myanmar",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           84.1240,
+           28.3949
+         ]
+       },
+       "properties": {
+         "address": "Nepal",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           127.5101,
+           40.3399
+         ]
+       },
+       "properties": {
+         "address": "North Korea",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           55.9754,
+           21.4735
+         ]
+       },
+       "properties": {
+         "address": "Oman",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           69.3451,
+           30.3753
+         ]
+       },
+       "properties": {
+         "address": "Pakistan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           35.2332,
+           31.9522
+         ]
+       },
+       "properties": {
+         "address": "Palestine",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           121.7740,
+           12.8797
+         ]
+       },
+       "properties": {
+         "address": "Philippines",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           51.1839,
+           25.3548
+         ]
+       },
+       "properties": {
+         "address": "Qatar",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+         105.3188,
+         61.5240
+         ]
+       },
+       "properties": {
+         "address": "Russia",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           45.0792,
+           23.8859
+         ]
+       },
+       "properties": {
+         "address": "Saudi Arabia",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           103.8198,
+           1.3521
+         ]
+       },
+       "properties": {
+         "address": "Singapore",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+         127.7669,
+           35.9078
+         ]
+       },
+       "properties": {
+         "address": "South Korea",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           80.7718,
+           7.8731
+         ]
+       },
+       "properties": {
+         "address": "Sri Lanka",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           38.9968,
+           34.8021
+         ]
+       },
+       "properties": {
+         "address": "Syria",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           71.2761,
+           38.8610
+         ]
+       },
+       "properties": {
+         "address": "Tajikistan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           100.9925,
+           15.8700
+         ]
+       },
+       "properties": {
+         "address": "Thailand",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           125.7275,
+           8.8742
+         ]
+       },
+       "properties": {
+         "address": "Timor-Leste",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           35.2433,
+           38.9637
+         ]
+       },
+       "properties": {
+         "address": "Turkey",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           59.5563,
+           38.9697
+         ]
+       },
+       "properties": {
+         "address": "Turkmenistan",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           53.8478,
+           23.4241
+         ]
+       },
+       "properties": {
+         "address": "United Arab Emirates",
+       }
+     },
+     {
+       "type": "Feature",
+       "geometry": {
+         "type": "Point",
+         "coordinates": [
+           64.5853,
+           41.3775
+         ]
+       },
+       "properties": {
+         "address": "Uzbekistan",
+       }
      }
-   }
-
-   // New map
-   var map = new google.maps.Map(document.getElementById('map'), options);
-
-   // Listen for click on map
-   google.maps.event.addListener(map, 'click', function(event) {
-     // Add marker
-     addMarker({
-       coords: event.latLng
-     });
-   });
-
-
-
-   // Array of markers
-
-   // Loop through markers
-   for (var i = 0; i < markers.length; i++) {
-     // Add marker
-     addMarker(markers[i]);
-   }
-
-   // Add Marker Function
-   function addMarker(props) {
-     var marker = new google.maps.Marker({
-       position: props.coords,
-       map: map,
-       //icon:props.iconImage
-     });
-
-     // Check content
-     if (props.content) {
-       var infoWindow = new google.maps.InfoWindow({
-         content: props.content
-       });
-
-       marker.addListener('click', function() {
-         infoWindow.open(map, marker);
-       });
-     }
-   }
- }
-
-
-
-
-
- window.onload = function() {
-   var canvas = document.getElementById("canv");
-   var ctx = canvas.getContext("2d");
-   // Utilities
-   function randomColor() {
-     return '#' + Math.random().toString(16).slice(2, 8);
-   }
-
-   function randomWord() {
-   var word = words[Math.floor(Math.random() * words.length)];
-   return word;
- }
-
-   function randomInt(min, max) {
-     return Math.floor(Math.random() * (max - min + 1)) + min;
-   }
-   //Make the canvas occupy the full page
-   var W = window.innerWidth,
-     H = window.innerHeight;
-   canvas.width = W;
-   canvas.height = H;
-
-   var particles = [];
-   var mouse = {};
-   //Lets create some particles now
-   var particle_count = 20;
-   for (var i = 0; i < particle_count; i++) {
-     particles.push(new particle());
-   }
-   canvas.addEventListener('mousedown', track_mouse, false);
-   canvas.addEventListener('touch', track_mouse, false);
-
-   function track_mouse(e) {
-     mouse.x = e.pageX;
-     mouse.y = e.pageY;
-
-     for (var i = 0; i < particle_count; i++) {
-       particles.push(new particle());
-     }
-   }
-
-   function particle() {
-     //speed, life, location, life, colors
-     //speed range = -2.5 to 2.5
-     this.speed = {
-       x: -2.5 + Math.random() * 1,
-       y: -2.5 + Math.random() * 1
-     };
-     //location = center of the screen
-     if (mouse.x && mouse.y) {
-       this.location = {
-         x: mouse.x,
-         y: mouse.y
-       };
-     } else {
-       this.location = {
-         x: W / 2,
-         y: H / 2
-       };
-     }
-     this.color = randomColor()
-
-     this.font = {
-       size: randomInt(3, 15)
-     }
-
-     this.word = randomWord()
-   }
-
-   function draw() {
-     ctx.globalCompositeOperation = "source-over";
-     //Painting the canvas black
-     ctx.fillStyle = "black";
-     ctx.fillRect(0, 0, W, H);
-     ctx.globalCompositeOperation = "";
-     for (var i = 0; i < particles.length; i++) {
-       var p = particles[i];
-       ctx.beginPath();
-       ctx.font = p.font.size + "1px Georgia";
-       ctx.textAlign = "center";
-       ctx.transition = "all 2s ease";
-       ctx.fillStyle = p.color;
-       ctx.fillText(p.word, p.location.x, p.location.y);
-       ctx.fill();
-       ctx.stroke();
-
-       //lets move the particles
-       p.location.x += p.speed.x;
-       p.location.y += p.speed.y;
-
-       p.speed.x += randomInt(-0.01, 0.01);
-       p.speed.y += randomInt(-0.01, 0.01);
-
-       // Make 'em big and small
-       // Warning: Causes extreme lag
-       //p.font.size += randomInt(-0.1, 0.1)
-     }
-   }
-   setInterval(draw, 10);
+   ]
  };
+ // This adds the data to the map
+ map.on('load', function(e) {
 
- // Big Word Array
- words = [ "Afghanistan", "Armenia", "Azerbaijan", "Bahrain", "Bangladesh", "Bhutan", "Brunei", "Cambodia", "China", "Cyprus", "Georgia", "India", "Indonesia", "Iran", "Iraq", "Israel", "Japan", "Jordan", "Kazakhstan", "Kuwait", "Kyrgyzstan", "Laos", "Lebanon", "Malaysia", "Maldives", "Mongolia", "Myanmar", "Nepal", "North Korea", "Oman", "Pakistan", "Palestine", "Philippines", "Qatar", "Russia", "Saudi Arabia", "Singapore", "South Korea", "Sri Lanka", "Syria", "Taiwan", "Tajikistan", "Thailand", "Timor-Leste", "Turkey", "Turkmenistan", "United Arab Emirates", "Uzbekistan" ];
+   // Initialize the list
+   buildLocationList(stores);
+
+ });
+
+
+ // This is where your interactions with the symbol layer used to be
+ // Now you have interactions with DOM markers instead
+ stores.features.forEach(function(marker, i) {
+   // Create an img element for the marker
+   var el = document.createElement('div');
+   el.id = "marker-" + i;
+   el.className = 'marker';
+   // Add markers to the map at all points
+   new mapboxgl.Marker(el, {
+       offset: [0, -20]
+     })
+     .setLngLat(marker.geometry.coordinates)
+     .addTo(map);
+
+   el.addEventListener('click', function(e) {
+     // 1. Fly to the point
+     flyToStore(marker);
+
+   });
+ });
+
+
+ function flyToStore(currentFeature) {
+   map.flyTo({
+     center: currentFeature.geometry.coordinates,
+     zoom: 5
+
+   });
+ }
+
+
+ function buildLocationList(data) {
+   for (i = 0; i < data.features.length; i++) {
+     var currentFeature = data.features[i];
+     var prop = currentFeature.properties;
+
+     var listings = document.getElementById('listings');
+     var listing = listings.appendChild(document.createElement('div'));
+     listing.className = 'item';
+     listing.id = "listing-" + i;
+
+     var link = listing.appendChild(document.createElement('a'));
+     link.href = '#';
+     link.className = 'title';
+     link.dataPosition = i;
+     link.innerHTML = prop.address;
+
+     var details = listing.appendChild(document.createElement('div'));
+
+
+
+     link.addEventListener('click', function(e) {
+       // Update the currentFeature to the store associated with the clicked link
+       var clickedListing = data.features[this.dataPosition];
+
+       // 1. Fly to the point
+       flyToStore(clickedListing);
+
+       // 2. Highlight listing in sidebar (and remove highlight for all other listings)
+       var activeItem = document.getElementsByClassName('active');
+
+       if (activeItem[0]) {
+         activeItem[0].classList.remove('active');
+       }
+       this.parentNode.classList.add('active');
+
+     });
+   }
+ }
