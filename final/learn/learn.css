@@ -48,10 +48,17 @@ strong {
   font-size: 1.5vw;
 }
 
+#list1 li:hover, #list2 li:hover, #list3 li:hover, #list4 li:hover, #list5 li:hover {
+  color: white;
+  background-color: #333;
+}
 
-#customers li {
+ul {
+  padding: 0px;
+}
+
+#list1 li, #list2 li, #list3 li, #list4 li, #list5 li {
   color: #661933;
-  background-color: inherit;
   border: 1px solid #ddd;
   padding: 4px;
   padding-top: 6px;
