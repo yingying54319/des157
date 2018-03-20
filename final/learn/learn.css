@@ -48,11 +48,6 @@ strong {
   font-size: 1.5vw;
 }
 
-#list1 li:hover, #list2 li:hover, #list3 li:hover, #list4 li:hover, #list5 li:hover {
-  color: white;
-  background-color: #333;
-}
-
 ul {
   padding: 0px;
 }
