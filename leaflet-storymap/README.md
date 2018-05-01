@@ -1,74 +1,29 @@
-Leaflet JSON Layer
-============
+# leaflet-geojson-selector
+Show GeoJSON properties in a interactive menu and map
 
-Simple way for transform any JSON data source in a Leaflet Layer!
+Copyright 2016 [Stefano Cudini](http://labs.easyblog.it/stefano-cudini/)
 
-A Dynamic Leaflet Layer that load JSON data in layer in the form of markers with attributes
+Tested in Leaflet 0.7.3
 
-and minimize remote requests with caching system
+Licensed under the [MIT](https://opensource.org/licenses/MIT)
 
-Tested in Leaflet 0.7 and 1.1
+![Image](https://raw.githubusercontent.com/stefanocudini/leaflet-geojson-selector/master/images/leaflet-geojson-selector.jpg)
 
-# Options
-| Option		| Data	  | Description                       |
-| ------------- | --------| ----------------------------------------- |
-| url           | String  | remote url                                |
-| jsonpParam    | String  | callback parameter name for jsonp request append to url |
-| jsonpParam    | String  | callback parameter name for jsonp request append to url |
-| callData	    | String  | custom function for data source, params: (req: url|bbox, callback: func), return {abort: func} or jQuery jqXHR Object |
-| **Filtering**   |         |   |                                      
-| propertyItems	| String  | json property used contains data items |
-| propertyLoc	| String  | json property used as Latlng of marker, if is array: *['lat','lon']* select double fields |
-| locAsGeoJSON	| String  | interpret location data as [lon, lat] value pair instead of [lat, lon] |
-| propertyTitle	| String  | json property used as title in marker |
-| filterData	| String  | function for pre-filter data |
-| **Rendering**   |         |   |
-| dataToMarker	| String  | function that will be used for creating markers from json points |
-| onEachMarker	| String  | function called on each marker created, similar to option onEachFeature of L.GeoJSON |
-| layerTarget	| String  | pre-existing layer to add markers(*L.LayerGroup*, *L.MarkerClusterGroup*) |
-| buildPopup	| String  | function popup builder |
-| optsPopup	    | String  | popup options |
-| buildIcon	    | String  | function icon builder |
-| **Caching**     |         |  |
-| minShift	    | String | min shift for update data(in meters) |
-| precision	    | String | number of digit send to server for lat,lng precision |
-| updateOutBounds| String | request new data only if current bounds higher than last bounds |
+#Where
 
-# Events
-| Event			 | Data			  | Description                               |
-| ---------------------- | ---------------------- | ----------------------------------------- |
-| 'dataloading' | {req: url|bbox} | fired before ajax/jsonp request, req is bbox if url option is null |
-| 'dataloaded'	| {data: json}	  | fired on ajax/jsonp request success |
+**Demo online:**  
+[labs.easyblog.it/maps/leaflet-geojson-selector](http://labs.easyblog.it/maps/leaflet-geojson-selector/)
 
-# Usage
+**Source code:**  
+[Github](https://github.com/stefanocudini/leaflet-geojson-selector)  
+[NPM](https://npmjs.org/package/leaflet-geojson-selector)
 
-```
-var l = new L.LayerJSON({url: "search.php?lat1={lat1}&lat2={lat2}&lon1={lon1}&lon2={lon2}" });
-map.addLayer(l);
-```
+#Build
 
-# Where
-
-**Demos:**
-
-[http://labs.easyblog.it/maps/leaflet-layerjson](http://labs.easyblog.it/maps/leaflet-layerjson/)
-
-**Source:**
-
-[Github](https://github.com/stefanocudini/leaflet-layerjson)  
-[Bitbucket](https://bitbucket.org/stefanocudini/leaflet-layerjson)  
-[NPM](https://npmjs.org/package/leaflet-layerjson)  
-[Atmosphere](https://atmosphere.meteor.com/package/leaflet-layerjson)
-
-
-# Build
-
-This plugin support [Grunt](http://gruntjs.com/) for building process.
+Since Version 1.4.7 this plugin support [Grunt](http://gruntjs.com/) for building process.
 Therefore the deployment require [NPM](https://npmjs.org/) installed in your system.
-
 After you've made sure to have npm working, run this in command line:
-```
+```bash
 npm install
 grunt
 ```
-

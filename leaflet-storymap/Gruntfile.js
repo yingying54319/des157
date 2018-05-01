@@ -2,18 +2,18 @@
 
 module.exports = function(grunt) {
 
-grunt.loadNpmTasks('grunt-contrib-clean');
-grunt.loadNpmTasks('grunt-contrib-concat');
-grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-uglify');
-grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-concat');
+grunt.loadNpmTasks('grunt-contrib-clean');
+grunt.loadNpmTasks('grunt-contrib-cssmin');
+grunt.loadNpmTasks('grunt-contrib-jshint');
 
 grunt.initConfig({
 	pkg: grunt.file.readJSON('package.json'),
 	meta: {
 		banner:
 		'/* \n'+
-		' * Leaflet JSON Layer v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> \n'+
+		' * Leaflet GeoJSON Selector v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> \n'+
 		' * \n'+
 		' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> \n'+
 		' * <%= pkg.author.email %> \n'+
@@ -42,8 +42,7 @@ grunt.initConfig({
 			},
 			"-W099": true,	//ignora tabs e space warning
 			"-W033": true,
-			"-W044": true,	//ignore regexp
-			"-W061": true	//ignore eval in getAjax()
+			"-W044": true	//ignore regexp
 		},
 		files: ['src/*.js']
 	},
@@ -53,7 +52,8 @@ grunt.initConfig({
 		},
 		dist: {
 			files: {
-				'dist/leaflet-layerjson.src.js': ['src/leaflet-layerjson.js']
+				'dist/leaflet-geojson-selector.src.js': ['src/leaflet-geojson-selector.js'],			
+				'dist/leaflet-geojson-selector.src.css': ['src/leaflet-geojson-selector.css']
 			}
 		}
 	},
@@ -63,24 +63,35 @@ grunt.initConfig({
 		},
 		dist: {
 			files: {
-				'dist/leaflet-layerjson.min.js': ['dist/leaflet-layerjson.src.js']
+				'dist/leaflet-geojson-selector.min.js': ['dist/leaflet-geojson-selector.src.js']
 			}
 		}
-	},	
-	watch: {
-		dist: {
-			options: { livereload: true },
-			files: ['src/*','examples/*.html'],
-			tasks: ['clean','concat','jshint']
-		}		
+	},
+	cssmin: {
+		combine: {
+			files: {
+				'dist/leaflet-geojson-selector.min.css': ['src/leaflet-geojson-selector.css']
+			}
+		},
+		options: {
+			banner: '<%= meta.banner %>'
+		},
+		minify: {
+			expand: true,
+			cwd: 'dist/',
+			files: {
+				'dist/leaflet-geojson-selector.min.css': ['src/leaflet-geojson-selector.css']
+			}
+		}
 	}
 });
 
 grunt.registerTask('default', [
 	'clean',
-	'concat',
 	'jshint',
-	'uglify'
+	'concat',
+	'uglify',
+	'cssmin'
 ]);
 
 };

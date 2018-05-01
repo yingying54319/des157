@@ -15,16 +15,18 @@
 
 .geojson-list-item {
 	white-space: nowrap;
+	font-weight: bold;
+	text-transform: capitalize;
 	font-size: 14px;
 }
 
-#geofilter {
+#geofile {
 	margin: 0 20px;
 	font-size: 16px;
 	border: 2px solid #1978cf;
 	box-shadow: 0 0 8px #999;
 }
-#geofilter option {
+#geofile option {
 	padding: 4px;
 }
 
@@ -34,27 +36,23 @@
 <body>
 <h3><a href="../"><big>◄</big> Leaflet GeoJSON Selector</a></h3>
 
-<h4>Overpass API Example: load buildings in area</h4>
+<h4>Reload Layer Example: reload GeoJSON layer at runtime</h4>
 
 <div id="map"></div>
 
-<select id="geofilter" size="3" multiple>
-	<option value="data=[out:json];way[building=residential](41.878660,12.562383,41.883125,12.571663);(._;>;);out;">buildings</option>
-	<option value="data=[out:json];way[natural=wood](41.951734,12.408971,41.966542,12.446093);(._;>;);out;" selected>woods</option>
-	<option value="data=[out:json];node[amenity=bar](41.893684,12.493987,41.911539,12.531881);(._;>;);out;" selected>bars</option>
+<select id="geofile" size="3" multiple>
+	<option value="italy-regions.json" selected>italy-regions.json</option>
+	<option value="world-countries.json">world-countries.json</option>
 </select>
 
 <pre id="selection">&nbsp;</pre>
 
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/leaflet/dist/leaflet.js"></script>
-<script src="../node_modules/osmtogeojson/osmtogeojson.js"></script>
 <script src="../src/leaflet-geojson-selector.js"></script>
 <script>
 
 	var map = new L.Map('map', {
-			center: L.latLng(41.89059, 12.51652),
-			zoom: 18,
 			zoomControl: false,
 			layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 		});
@@ -63,43 +61,23 @@
 
 	var geoLayer = L.geoJson().addTo(map);
 	
-	var geoList = L.control.geoJsonSelector(geoLayer, {
-		listItemBuild: function(layer) {
-			var props = layer.feature.properties,
-				tags = props.tags,
-				html = 'ID: '+props.id+'<br>';
-			
-			for(var p in tags)
-				html += p+': '+tags[p]+'<br>';
-
-			return html;
-		}
-	});
+	var geoList = L.control.geoJsonSelector(geoLayer);
 
 	geoList.on('change', function(e) {
-		$('#selection').text( JSON.stringify(e.layers[0].feature.properties) );
+		$('#selection').text(JSON.stringify(e.layers[0].feature.properties));
 	})
 	.addTo(map);
 	
-	$('#geofilter').on('change', function(e) {
+	$('#geofile').on('change', function(e) {
 
-		$.ajax({
-			data: this.value,
-			type: 'post',
-			dataType: 'json',
-			url: 'http://overpass-api.de/api/interpreter',
-			success: function(json) {
+		$.getJSON(this.value, function(json) {
 
-				map.removeLayer(geoLayer);
+			map.removeLayer(geoLayer);
 
-				var geojson = osmtogeojson(json);
+			geoLayer = L.geoJson(json).addTo(map);
+			map.fitBounds( geoLayer.getBounds() );
 
-				geoLayer = L.geoJson(geojson).addTo(map);
-
-				map.fitBounds( geoLayer.getBounds() );
-
-				geoList.reload( geoLayer );
-			}
+			geoList.reload( geoLayer );
 		});
 	}).trigger('change');
 
