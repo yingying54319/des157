@@ -1,81 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-       <meta charset="utf-8">
-       <link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" />
-       <link href="styles.css" rel="stylesheet" />
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"> </script>
-       <title>Yingying Lin's DES 157 Portal</title>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="leaflet.css" />
+	<link rel="stylesheet" href="leaflet-geojson-selector.css" />
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+	<h3><a href="../"><big>◄</big> Leaflet GeoJSON Selector</a></h3>
+	<h4>Simple Example: <em>Italian regions</em></h4>
+	<div id="map"></div>
+	<div id="map2"></div>
+	<div id="map3"></div>
+	<pre id="selection">&nbsp;</pre>
+	<script src="jquery.min.js"></script>
+	<script src="leaflet.js"></script>
+	<script src="leaflet-geojson-selector.js"></script>
+	<script>
+		var geoLayer, geoList,
+			map = new L.Map('map', {
+				layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
+				zoomControl: false
+			});
 
-  <header>
-       <div id="mySketch"></div>
-  </header>
+		map.addControl(L.control.zoom({
+			position: 'topright'
+		}));
 
+		$.getJSON('italy-regions.json', function(json) {
 
-  <section class="col-1 column" >
-    <h2>Studio</h2>
-  <nav>
-   <ul>
-   <li><a href="studio1/madlibs.html">Mad Libs</a></li>
-   <li><a href="studio2/index.html">Pocket Full of Interface</a></li>
-   <li><a href="studio4/studio4.html">Meet Me at the Library</a></li>
-   <li><a href="final/index.html">Final</a></li>
+			geoLayer = L.geoJson(json).addTo(map);
 
- </ul>
- </nav>
-</section>
+			map.fitBounds(geoLayer.getBounds())
+				.setMaxBounds(geoLayer.getBounds().pad(0.5));
 
-<section class="col-2 column">
-   <h2>Project</h2>
- <nav>
-   <ul>
-   <li><a href="project/topic-brainstorm.html">Topic Brainstorm</a></li>
-   <li><a href="project/comparative/comparative.html">Comparative</a></li>
-   <li><a href="project/research/research.html">Background Research</a></li>
-   <li><a href="project/research/audienceresearch.html">Audience Research</a></li>
-   <li><a href="project/storyboards/storyboards.html">Storyboards</a></li>
-   <li><a href="project/visual/visual.html">Visual Research</a></li>
-   <li><a href="project/projectbrief/projectbrief.html">Project Brief</a></li>
-   <li><a href="project/process/wireframe.html">Wireframe</a></li>
-   <li><a href="project/process/userflow.html">User Flow</a></li>
-  </ul>
- </nav>
-</section>
-       
-       
-       
-       <section class="col-2 column">
-   <h2>Project</h2>
- <nav>
-   <ul>
-   <li><a href="project/process/siteflow.html">Site Flow</a></li>
-   <li><a href="project/int-wireframe/index.html">Interactive Wireframe</a></li>
-   <li><a href="project/paper-prototype/index.html">Paper Prototype</a></li>
-   <li><a href="project/comps/index.html">Comps</a></li>
-   <li><a href="project/interactive-prototype-1/index.html">Interactive Prototype 1</a></li>      
-   <li><a href="project/interactive-prototype-2/index.html">Interactive Prototype 2</a></li>           
-   <li><a href="project/audience-test/index.html">Audience Test</a></li>   
-   <li><a href="project/audience-test-result/index.html">Audience Test Result</a></li> 
-   <li><a href="project/presentation.pdf">Presentation</a></li>        
-          <li><a href="leaflet-storymap/index.html">map</a></li>      
-  
-  </ul>
- </nav>
-</section>
+			geoList = new L.Control.GeoJSONSelector(geoLayer, {
+				zoomToLayer: true,
+				listOnlyVisibleLayers: true
+			});
 
-  <footer>
-<a href="mailto:inglin@ucdavis.edu">Email Me</a>
-<a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>
-<a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+			geoList.on('change', function(e) {
 
-</footer>
+				$(function() {
+
+					var jsonObj = $.parseJSON(JSON.stringify(e.layers[0].feature.properties, ['name', 'addr:city', 'addr:postcode', 'addr:street', 'addr:housenumber', 'website', 'email', 'phone', 'fax', 'mail', 'opening_hours', 'operator']));
+					var html = '<table border="1">';
+					$.each(jsonObj, function(key, value) {
+						html += '<tr>';
+						html += '<td>' + key.replace(":", " ") + '</td>';
+						html += '<td>' + value + '</td>';
+						html += '</tr>';
+					});
+					html += '</table>';
+
+					$('#selection').html(html);
+				});
 
 
-    <script src="script.js"></script>
+			});
+
+			map.addControl(geoList);
+
+		});
+	</script>
+	<div id="copy"><a href="http://labs.easyblog.it/">Labs</a> &bull; <a rel="author" href="http://labs.easyblog.it/stefano-cudini/">Stefano Cudini</a></div>
+
 </body>
 
 </html>
