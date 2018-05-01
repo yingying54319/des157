@@ -1,38 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="initial-scale=1"/>
-  <title>leaflet-storymap</title>
-  <!-- Load Leaflet from a https CDN, not http. Look for updates at http://leafletjs.com/download.html -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.2/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
-  <!-- load jQuery  -->
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <!-- load Font-Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-  <!-- Load leaflet.extra-markers from local directory -->
-  <script src="markers/leaflet.extra-markers.min.js"></script>
-  <link rel="stylesheet" href="markers/leaflet.extra-markers.min.css">
-  <link rel="stylesheet" href="style.css">
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="leaflet.css" />
+	<link rel="stylesheet" href="leaflet-geojson-selector.css" />
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div id="title" class="title-text">
-    <h1>Insert your title here</h1>
-    <small>Scroll <i class="fa fa-chevron-down"></i></small>
-  </div>
 
-  <div id="narration">
-    <div id="contents">
-      <div id="space-at-the-top" class="space-at-the-top"></div>
-    </div>
-  </div>
+	<h3><a href="../"><big>◄</big> Leaflet GeoJSON Selector</a></h3>
+	<h4>Simple Example: <em>Italian regions</em></h4>
+	<div id="map"></div>
+	<div id="map2"></div>
+	<div id="map3"></div>
+	<pre id="selection">&nbsp;</pre>
+	<script src="jquery.min.js"></script>
+	<script src="leaflet.js"></script>
+	<script src="leaflet-geojson-selector.js"></script>
+	<script>
+		var geoLayer, geoList,
+			map = new L.Map('map', {
+				layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
+				zoomControl: false
+			});
 
-  <div id="map"></div>
+		map.addControl(L.control.zoom({
+			position: 'topright'
+		}));
 
-  <script type="text/javascript" src="script.js"></script>
+		$.getJSON('italy-regions.json', function(json) {
+
+			geoLayer = L.geoJson(json).addTo(map);
+
+			map.fitBounds(geoLayer.getBounds())
+				.setMaxBounds(geoLayer.getBounds().pad(0.5));
+
+			geoList = new L.Control.GeoJSONSelector(geoLayer, {
+				zoomToLayer: true,
+				listOnlyVisibleLayers: true
+			});
+
+			geoList.on('change', function(e) {
+
+				$(function() {
+
+					var jsonObj = $.parseJSON(JSON.stringify(e.layers[0].feature.properties, ['name', 'addr:city', 'addr:postcode', 'addr:street', 'addr:housenumber', 'website', 'email', 'phone', 'fax', 'mail', 'opening_hours', 'operator']));
+					var html = '<table border="1">';
+					$.each(jsonObj, function(key, value) {
+						html += '<tr>';
+						html += '<td>' + key.replace(":", " ") + '</td>';
+						html += '<td>' + value + '</td>';
+						html += '</tr>';
+					});
+					html += '</table>';
+
+					$('#selection').html(html);
+				});
+
+
+			});
+
+			map.addControl(geoList);
+
+		});
+	</script>
+	<div id="copy"><a href="http://labs.easyblog.it/">Labs</a> &bull; <a rel="author" href="http://labs.easyblog.it/stefano-cudini/">Stefano Cudini</a></div>
 
 </body>
+
 </html>
