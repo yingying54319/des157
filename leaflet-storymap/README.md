@@ -1,50 +1,74 @@
-# leaflet-storymap
-Leaflet storymap with scroll-driven navigation for narrative and point markers from easy-to-learn template, with GeoJSON data file
+Leaflet JSON Layer
+============
 
-## Demo
-http://jackdougherty.github.io/leaflet-storymap/index.html
+Simple way for transform any JSON data source in a Leaflet Layer!
 
-### Features
-- Scroll-driven navigation, using screen swipe, trackpad, or keyboard down-arrow. Initial map displays all point markers.
-- Viewers can pan and zoom the map independently of the narration, or click on any point to go directly to that chapter.
-- Easy-to-learn template to create your own storymap. Upload text, point coordinates, zoom levels, and image links to a CSV generic spreadsheet, and drag into http://geojson.io to create a GeoJSON data file.
-- Images can be stored in local subfolder or pulled from an external URL.
-- Works in modern browsers: Chrome, Firefox, Safari, Internet Explorer 9+.
-- Accessible tested using the WAVE and aXe tools.
+A Dynamic Leaflet Layer that load JSON data in layer in the form of markers with attributes
 
-### Limitations
-- Due to GeoJSON data limitations, there is no easy way to insert hyperlinks inside the 'description' text. They must be created outside, in fields such as "source-link".
-- Images must contain an [alternative text](https://moz.com/learn/seo/alt-text), or alt tag description of the photo to maintain accessibility using the `alt` field in the csv/geojson.
+and minimize remote requests with caching system
 
-## See also
-- Easier-to-modify Leaflet Storymaps with Google Sheets
-- https://github.com/DataVizForAll/leaflet-storymaps-with-google-sheets
+Tested in Leaflet 0.7 and 1.1
 
-### Compare with
-- Easy-to-learn story map tools -- see Maps Mania 2016 review (http://googlemapsmania.blogspot.com/2016/06/easy-story-maps.html):
-  - Esri ArcGIS storymap http://storymaps.arcgis.com/en/ with open-source code at https://github.com/Esri/map-journal-storytelling-template-js
-  - MapMe storymap http://mapme.com/support/knowledgebase/how-do-mapme-stories-work/
-  - CartoDB Odyssey storymap http://cartodb.github.io/odyssey.js/
-  - KnightLab storymap https://storymap.knightlab.com/
-- Related Leaflet storymap template that also displays multiple GeoJSON layers http://jackdougherty.github.io/leaflet-storymap-layers/index.html
-- Related Leaflet storymap template that also displays both tile layers and GeoJSON layers
-http://jackdougherty.github.io/otl-historical-town-borders/index.html
+# Options
+| Option		| Data	  | Description                       |
+| ------------- | --------| ----------------------------------------- |
+| url           | String  | remote url                                |
+| jsonpParam    | String  | callback parameter name for jsonp request append to url |
+| jsonpParam    | String  | callback parameter name for jsonp request append to url |
+| callData	    | String  | custom function for data source, params: (req: url|bbox, callback: func), return {abort: func} or jQuery jqXHR Object |
+| **Filtering**   |         |   |                                      
+| propertyItems	| String  | json property used contains data items |
+| propertyLoc	| String  | json property used as Latlng of marker, if is array: *['lat','lon']* select double fields |
+| locAsGeoJSON	| String  | interpret location data as [lon, lat] value pair instead of [lat, lon] |
+| propertyTitle	| String  | json property used as title in marker |
+| filterData	| String  | function for pre-filter data |
+| **Rendering**   |         |   |
+| dataToMarker	| String  | function that will be used for creating markers from json points |
+| onEachMarker	| String  | function called on each marker created, similar to option onEachFeature of L.GeoJSON |
+| layerTarget	| String  | pre-existing layer to add markers(*L.LayerGroup*, *L.MarkerClusterGroup*) |
+| buildPopup	| String  | function popup builder |
+| optsPopup	    | String  | popup options |
+| buildIcon	    | String  | function icon builder |
+| **Caching**     |         |  |
+| minShift	    | String | min shift for update data(in meters) |
+| precision	    | String | number of digit send to server for lat,lng precision |
+| updateOutBounds| String | request new data only if current bounds higher than last bounds |
 
-## Requires open-source libraries
-- Leaflet.js
-- leaflet.extra-markers
-- jQuery
-- Font Awesome
+# Events
+| Event			 | Data			  | Description                               |
+| ---------------------- | ---------------------- | ----------------------------------------- |
+| 'dataloading' | {req: url|bbox} | fired before ajax/jsonp request, req is bbox if url option is null |
+| 'dataloaded'	| {data: json}	  | fired on ajax/jsonp request success |
 
-## Credits
-- Adapted from MUX Lab, Map Effects 100: https://github.com/muxlab/map-effects-100, see http://muxlab.github.io/map-effects-100/Leaflet/11_scroll-driven-map-navigation.html
-- Thanks [@ilyankou](https://github.com/ilyankou) for improving image display, navigation scroll, and web interface
-- Thanks [@geospatialem] (https://github.com/geospatialem) for accessibility improvements
-- Numeric icon markers thanks to https://github.com/coryasilva/Leaflet.ExtraMarkers and StackOverflow suggestions for modification
+# Usage
 
-## Create your own storymap
+```
+var l = new L.LayerJSON({url: "search.php?lat1={lat1}&lat2={lat2}&lon1={lon1}&lon2={lon2}" });
+map.addLayer(l);
+```
 
-See easy-to-learn instructions in the Leaflet Templates section of *Data Visualization for All* book at http://DataVizForAll.org
+# Where
 
-## Examples with Added Features
-- Explore http://pembrokesoundscapes.ca/map, view code at https://github.com/rblades/rblades.github.io. Added audio playback in the narrative, historical map layers.
+**Demos:**
+
+[http://labs.easyblog.it/maps/leaflet-layerjson](http://labs.easyblog.it/maps/leaflet-layerjson/)
+
+**Source:**
+
+[Github](https://github.com/stefanocudini/leaflet-layerjson)  
+[Bitbucket](https://bitbucket.org/stefanocudini/leaflet-layerjson)  
+[NPM](https://npmjs.org/package/leaflet-layerjson)  
+[Atmosphere](https://atmosphere.meteor.com/package/leaflet-layerjson)
+
+
+# Build
+
+This plugin support [Grunt](http://gruntjs.com/) for building process.
+Therefore the deployment require [NPM](https://npmjs.org/) installed in your system.
+
+After you've made sure to have npm working, run this in command line:
+```
+npm install
+grunt
+```
+
