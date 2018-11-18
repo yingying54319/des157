@@ -21,6 +21,15 @@ body {
     body {
       font-size: 16px; } }
 
+h7{
+  font-size: 22px;
+}
+
+.content{
+  margin-top: -20px;
+  font-size: 14px;
+}
+
 a {
   color: #2c98f0;
   -webkit-transition: 0.5s;
